@@ -36,6 +36,11 @@ class ResponsesController < ApplicationController
     redirect_to question
   end
 
+  def up_vote
+    response = Response.find(params[:id])
+
+  end
+
   private
 
   def set_response
