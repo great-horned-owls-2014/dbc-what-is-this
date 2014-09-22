@@ -27,6 +27,7 @@ class ResponsesController < ApplicationController
     @response.destroy
 
     respond_to do |format|
+      format.html{ redirect_to @response.question}
       format.js { head :ok }
     end
   end
