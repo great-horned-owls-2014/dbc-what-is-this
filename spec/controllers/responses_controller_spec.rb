@@ -45,8 +45,7 @@ RSpec.describe ResponsesController, :type => :controller do
     context "#up_vote" do
 
       it "should create a new vote for the response" do
-        post :up_vote, id: @myresponse
-        expect(response).to be_success
+        expect{ delete :up_vote, id: @myresponse }.to change(Vote,:count).by(+1)
       end
 
     end
