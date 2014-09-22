@@ -26,13 +26,13 @@
       </li>
       <% end %>
 
-      <li>
-        <% if session[:current_user] %>
+      <% if session[:current_user] && not_yet_voted?(response) %>
+        <li>
           <%= link_to vote_up_response_path(response), class: 'upvote', data: { id: response.id } do %>
             <i class="fa fa-thumbs-up"></i> Vote up
           <% end %>
-        <% end %>
-      </li>
+        </li>
+      <% end %>
 
       <li>
         <div class="votes-count">
