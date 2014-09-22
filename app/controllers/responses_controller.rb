@@ -24,10 +24,11 @@ class ResponsesController < ApplicationController
   end
 
   def destroy
-    question = @response.question
     @response.destroy
 
-    redirect_to question
+    respond_to do |format|
+      format.js { head :ok }
+    end
   end
 
   def up_vote
