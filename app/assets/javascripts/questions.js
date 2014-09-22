@@ -84,7 +84,7 @@ $(document).ready( function () {
         $('form#new_comment input[type="submit"').prop('disable', false);
     });
   });
-  $(document).unbind('click').on('click', '.delete-response', function(event){
+  $(document).on('click', '.delete-response', function(event){
     event.preventDefault();
     var response_id = $(this).data('response-id');
     $.ajax({
