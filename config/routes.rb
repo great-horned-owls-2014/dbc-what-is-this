@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:create, :destroy]
   post '/login' => 'sessions#create'
-  delete '/logout' => 'sessions#destroy', as: 'logout'
+  get '/logout' => 'sessions#destroy', as: 'logout'
 
   resources :oauths, only: [:create]
   get '/google_login' => 'oauths#new', as: 'google_login'
