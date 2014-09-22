@@ -37,12 +37,7 @@ RSpec.describe ResponsesController, :type => :controller do
     context "#destroy" do
 
       it "should delete the response" do
-        expect{ delete :destroy, id: @myresponse }.to change(Response,:count).by(-1)
-      end
-
-      it "should redirect user to admin posts" do
-        delete :destroy, id: @myresponse
-        expect(response).to redirect_to("/questions/#{@question.id}")
+        expect{ delete :destroy, id: @myresponse }.to change(Response, :count).by(-1)
       end
 
     end
