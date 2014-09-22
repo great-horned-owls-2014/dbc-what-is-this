@@ -1,7 +1,7 @@
 <div class="comment col-center col-10">
 
 <div class="comment-header">
-  <h4><%= link_to user_path(comment.user) do %><%= comment.user.name.capitalize %><% end %> <em>@ <%= comment.created_at.strftime("%-d %b %Y, %H:%M") %></em></h4>
+  <h4><%= link_to user_path(comment.user) do %><%= comment.user.name.capitalize %><% end %> <em>@ <%= comment.created_at.strftime("%-d %b %y, %H:%M") %></em></h4>
 
   <% if comment.user.id == session[:current_user] %>
     <ul class="comment-menu">

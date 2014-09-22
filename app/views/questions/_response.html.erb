@@ -2,13 +2,13 @@
 
   <div class="response-header clearfix">
 
-    <h3><%= link_to user_path(response.user) do %><%= response.user.name.capitalize %><% end %> <em>@ <%= response.created_at.strftime("%-d %b %Y, %H:%M") %></em></h3>
+    <h3><%= link_to user_path(response.user) do %><%= response.user.name.capitalize %><% end %> <em>@ <%= response.created_at.strftime("%-d %b %y, %H:%M") %></em></h3>
 
     <ul class="response-menu">
       <% if response.question.user.id == session[:current_user] && !best_response?(response) %>
         <li>
           <%= link_to mark_best_response_path(response), class: 'mark-as-best', data: { id: response.id } do %>
-            <i class="fa fa-check-circle"></i> Mark as best
+            <i class="fa fa-check-circle"></i> Best
           <% end %>
         </li>
       <% end %>
