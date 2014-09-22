@@ -20,7 +20,7 @@
         <% end %>
       </li>
       <li>
-        <%= link_to response_path, method: :delete, class: 'delete-response', data: {confirm: "You sure bub?", response_id: response.id }, remote: true do %>
+        <%= link_to '#', class: 'delete-response', data: {confirm: "You sure bub?", response_id: response.id } do %>
           <i class="fa fa-trash"></i> Delete
         <% end %>
       </li>
