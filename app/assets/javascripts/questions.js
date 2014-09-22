@@ -84,11 +84,19 @@ $(document).ready( function () {
         $('form#new_comment input[type="submit"').prop('disable', false);
     });
   });
-  // $(document).on('click', '.delete-response', function(e){
-  //   e.preventDefault();
-  //   var response_id = $(this).data();
-  //   console.log(response_id)
-  // });
+  $(document).unbind('click').on('click', '.delete-response', function(event){
+    event.preventDefault();
+    var response_id = $(this).data('response-id');
+    $.ajax({
+      url: '/responses/'+response_id,
+      type: 'DELETE',
+      contentType: 'JSON',
+    }).done(function(data){
+        $('.responses-list').load(' .responses-list');
+    }).fail(function(data){
+
+    });
+  });
 });
 
 
