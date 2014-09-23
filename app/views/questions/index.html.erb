@@ -1,0 +1,23 @@
+<%= render '/form_modals' %>
+
+<header class="page-header col-12">
+
+  <% if session[:current_user] %>
+    <%= button_to "Add Question", new_question_path, method: :get, class: "button-blue new-question-button" %>
+  <% end %>
+
+</header>
+
+<div class="col-12">
+  <ol class="thumb-grid group clearfix">
+
+    <% @questions.each do |question| %>
+      <li>
+        <%= link_to question_path(question) do %>
+          <img src='<%= question.image_path %>' class="thumb" >
+        <% end %>
+      </li>
+    <% end %>
+
+  </ol>
+</div>

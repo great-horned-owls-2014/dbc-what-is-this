@@ -1,0 +1,7 @@
+<%= form_for @question do |f| %>
+
+  <%= f.url_field :image_path, placeholder: "Image URL", required: true, autofocus: true %><br>
+  <%= f.text_field :title, placeholder: "Title", required: true %><br>
+  <%= f.submit %>
+
+<% end %>

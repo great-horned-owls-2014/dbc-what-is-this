@@ -1,0 +1,36 @@
+ol.thumb-grid {
+  padding: 20px;
+  text-align: center;
+  -webkit-column-count: 5;
+  -moz-column-count: 5;
+  column-count: 5;
+  font-size: 0;
+  line-height: 0;
+}
+
+ol.thumb-grid li {
+  display: inline-block;
+  background: #fff;
+  margin: 20px 20px;
+  overflow: hidden;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px #ccc;
+}
+
+img.thumb {
+  width: 170px;
+}
+
+ol.thumb-grid li:hover {
+  border: 1px solid #999;
+  box-shadow: 2px 2px 5px #999;
+}
+
+@media (max-width: 800px) {
+  ol.thumb-grid {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+  }
+}
